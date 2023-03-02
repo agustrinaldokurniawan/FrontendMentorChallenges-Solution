@@ -1,0 +1,375 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root {
+  --theme-1-bg-main: hsl(222, 26%, 31%);
+  --theme-1-bg-button: hsl(223, 31%, 20%);
+  --theme-1-bg-screen: hsl(224, 36%, 15%);
+  --theme-1-key-bg-blue: hsl(225, 21%, 49%);
+  --theme-1-key-shadow-blue: hsl(224, 28%, 35%);
+  --theme-1-key-bg-red: hsl(6, 63%, 50%);
+  --theme-1-key-shadow-red: hsl(6, 70%, 34%);
+  --theme-1-key-bg-orange: hsl(30, 25%, 89%);
+  --theme-1-key-shadow-orange: hsl(28, 16%, 65%);
+  --theme-1-text-blue: hsl(221, 14%, 31%);
+  --theme-1-text-white: hsl(0, 0%, 100%);
+
+  --theme-2-bg-main: hsl(0, 0%, 90%);
+  --theme-2-bg-button: hsl(0, 5%, 81%);
+  --theme-2-bg-screen: hsl(0, 0%, 93%);
+  --theme-2-key-bg-cyan: hsl(185, 42%, 37%);
+  --theme-2-key-shadow-cyan: hsl(185, 58%, 25%);
+  --theme-2-key-bg-orange: hsl(25, 98%, 40%);
+  --theme-2-key-shadow-orange: hsl(25, 99%, 27%);
+  --theme-2-key-bg-yellow: hsl(45, 7%, 89%);
+  --theme-2-key-shadow-yellow: hsl(35, 11%, 61%);
+  --theme-2-text-yellow: hsl(60, 10%, 19%);
+  --theme-2-text-white: hsl(0, 0%, 100%);
+
+  --theme-3-bg-main: hsl(268, 75%, 9%);
+  --theme-3-bg-rest: hsl(268, 71%, 12%);
+  --theme-3-key-bg-violet-1: hsl(281, 89%, 26%);
+  --theme-3-key-shadow-magenta-1: hsl(285, 91%, 52%);
+  --theme-3-key-bg-cyan: hsl(176, 100%, 44%);
+  --theme-3-key-shadow-cyan: hsl(177, 92%, 70%);
+  --theme-3-key-bg-violet-2: hsl(268, 47%, 21%);
+  --theme-3-key-shadow-magenta-2: hsl(290, 70%, 36%);
+  --theme-3-text-yellow: hsl(52, 100%, 62%);
+  --theme-3-text-blue: hsl(198, 20%, 13%);
+  --theme-3-text-white: hsl(0, 0%, 100%);
+
+  --font-league: 'League Spartan', sans-serif;
+}
+
+body {
+  font-size: 32px;
+  font-family: var(--font-league)
+}
+
+#calculator {
+  max-width: 350px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#calculator .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#calculator .header h1 {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+#calculator .theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#calculator .number {
+  display: flex;
+  font-size: .5em;
+  padding: 0 6px;
+  flex-direction: row;
+  align-self: flex-end;
+  gap: 12px;
+}
+
+#calculator .theme .number p {
+  align-self: flex-end;
+  margin-bottom: 0;
+}
+
+#calculator .toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#calculator .toggle-container p {
+  font-size: .4em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  margin: 0;
+}
+
+#calculator .toggle {
+  display: flex;
+  width: 60px;
+  height: 20px;
+  border-radius: 75px;
+  position: relative;
+  cursor: pointer;
+}
+
+#calculator .ball {
+  width: 12px;
+  height: 12px;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 4px;
+  border-radius: 15px;
+  left: 0;
+  animation: linear;
+  animation-duration: .5s;
+}
+
+@keyframes theme1to2 {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 20px;
+  }
+}
+
+@keyframes theme1to3 {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 40px;
+  }
+}
+
+@keyframes theme2to3 {
+  0% {
+    left: 20px;
+  }
+
+  100% {
+    left: 40px;
+  }
+}
+
+@keyframes theme2to1 {
+  0% {
+    left: 20px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes theme3to1 {
+  0% {
+    left: 40px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes theme3to2 {
+  0% {
+    left: 40px;
+  }
+
+  100% {
+    left: 20px;
+  }
+}
+
+#calculator .board {
+  padding: 20px;
+  text-align: right;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 1em;
+  font-weight: 700;
+  caret-color: transparent;
+}
+
+#calculator .list-button {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px;
+  border-radius: 5px;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+#calculator .list-button button {
+  font-size: .8em;
+  font-weight: 700;
+  font-family: var(--font-league);
+  cursor: pointer;
+  height: 40px;
+  animation-duration: .1s;
+  border: none;
+  border-radius: 5px;
+}
+
+@keyframes button-press {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 4px);
+    box-shadow: none;
+  }
+}
+
+#calculator .list-button button:nth-child(4) {
+  text-transform: uppercase;
+}
+
+#calculator .list-button button:nth-child(17) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-transform: uppercase;
+}
+
+#calculator .list-button button:nth-child(18) {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+[data-theme="1"] {
+  background-color: var(--theme-1-bg-main);
+  color: var(--theme-1-text-white);
+}
+
+[data-theme="1"] #calculator .toggle {
+  background-color: var(--theme-1-bg-button);
+}
+
+[data-theme="1"] #calculator .ball {
+  background-color: var(--theme-1-key-bg-red);
+  left: 0;
+}
+
+[data-theme="1"] #calculator .board {
+  background-color: var(--theme-1-bg-screen);
+  color: var(--theme-1-text-white);
+}
+
+[data-theme="1"] #calculator .list-button {
+  background-color: var(--theme-1-bg-button);
+}
+
+[data-theme="1"] #calculator .list-button button:not(:nth-child(4), :nth-child(17), :nth-child(18)) {
+  color: var(--theme-1-text-blue);
+  background-color: var(--theme-1-key-bg-orange);
+  box-shadow: 0 4px 0 -1px var(--theme-1-key-shadow-orange);
+}
+
+[data-theme="1"] #calculator .list-button button:is(:nth-child(4), :nth-child(17), :nth-child(18)) {
+  color: var(--theme-1-text-white);
+}
+
+[data-theme="1"] #calculator .list-button button:is(:nth-child(4), :nth-child(17)) {
+  background-color: var(--theme-1-key-bg-blue);
+  box-shadow: 0 4px 0 -1px var(--theme-1-key-shadow-blue);
+}
+
+[data-theme="1"] #calculator .list-button button:is(:nth-child(18)) {
+  background-color: var(--theme-1-key-bg-red);
+  box-shadow: 0 4px 0 -1px var(--theme-1-key-shadow-red);
+}
+
+
+[data-theme="2"] {
+  background-color: var(--theme-2-bg-main);
+  color: var(--theme-2-text-yellow);
+}
+
+[data-theme="2"] #calculator .toggle {
+  background-color: var(--theme-2-bg-button);
+}
+
+[data-theme="2"] #calculator .ball {
+  background-color: var(--theme-2-key-bg-orange);
+  left: 20px;
+}
+
+[data-theme="2"] #calculator .board {
+  background-color: var(--theme-2-bg-screen);
+  color: var(--theme-2-text-yellow);
+}
+
+[data-theme="2"] #calculator .list-button {
+  background-color: var(--theme-2-bg-button);
+}
+
+[data-theme="2"] #calculator .list-button button:not(:nth-child(4), :nth-child(17), :nth-child(18)) {
+  color: var(--theme-2-text-yellow);
+  background-color: var(--theme-2-key-bg-yellow);
+  box-shadow: 0 4px 0 -1px var(--theme-2-key-shadow-yellow);
+}
+
+[data-theme="2"] #calculator .list-button button:is(:nth-child(4), :nth-child(17), :nth-child(18)) {
+  color: var(--theme-2-text-white);
+}
+
+[data-theme="2"] #calculator .list-button button:is(:nth-child(4), :nth-child(17)) {
+  background-color: var(--theme-2-key-bg-cyan);
+  box-shadow: 0 4px 0 -1px var(--theme-2-key-shadow-cyan);
+}
+
+[data-theme="2"] #calculator .list-button button:is(:nth-child(18)) {
+  background-color: var(--theme-2-key-bg-orange);
+  box-shadow: 0 4px 0 -1px var(--theme-2-key-shadow-orange);
+}
+
+
+[data-theme="3"] {
+  background-color: var(--theme-3-bg-main);
+  color: var(--theme-3-text-yellow);
+}
+
+[data-theme="3"] #calculator .toggle {
+  background-color: var(--theme-3-bg-rest);
+}
+
+[data-theme="3"] #calculator .ball {
+  background-color: var(--theme-3-key-bg-cyan);
+  left: 40px;
+}
+
+[data-theme="3"] #calculator .board {
+  background-color: var(--theme-3-bg-rest);
+  color: var(--theme-3-text-yellow);
+}
+
+[data-theme="3"] #calculator .list-button {
+  background-color: var(--theme-3-bg-rest);
+}
+
+[data-theme="3"] #calculator .list-button button:not(:nth-child(4), :nth-child(17), :nth-child(18)) {
+  color: var(--theme-3-text-yellow);
+  background-color: var(--theme-3-key-bg-violet-2);
+  box-shadow: 0 4px 0 -1px var(--theme-3-key-shadow-magenta-2);
+}
+
+[data-theme="3"] #calculator .list-button button:is(:nth-child(4), :nth-child(17)) {
+  background-color: var(--theme-3-key-bg-violet-1);
+  color: var(--theme-3-text-white);
+  box-shadow: 0 4px 0 -1px var(--theme-3-key-shadow-magenta-1);
+}
+
+[data-theme="3"] #calculator .list-button button:is(:nth-child(18)) {
+  background-color: var(--theme-3-key-bg-cyan);
+  box-shadow: 0 4px 0 -1px var(--theme-3-key-shadow-cyan);
+}
