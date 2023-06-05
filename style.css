@@ -1,0 +1,161 @@
+body {
+  background-color: hsl(27, 66%, 92%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  flex-direction: column;
+}
+
+.container {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.balance-container {
+  background-color: hsl(10, 79%, 65%);
+  padding: 20px 30px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.balance-text p {
+  color: white;
+  margin: 0;
+}
+
+.balance-text :nth-child(2) {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background-color: hsl(25, 47%, 15%);
+  border-radius: 40px;
+  margin-left: -20px;
+}
+
+.circle-outline {
+  z-index: 2;
+  border: 2px solid white;
+  background-color: transparent;
+}
+
+.expenses-container {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 20px;
+}
+
+.expenses-title-text {
+  font-size: 24px;
+  color: hsl(25, 47%, 15%);
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.summary-expenses {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.month-expenses :nth-child(1) {
+  color: hsl(28, 10%, 53%);
+  margin-bottom: 0;
+}
+
+.month-expenses :nth-child(2) {
+  color: hsl(25, 47%, 15%);
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.growth-expenses :nth-child(1) {
+  color: hsl(25, 47%, 15%);
+  font-weight: 700;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.growth-expenses :nth-child(2) {
+  color: hsl(28, 10%, 53%);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.line {
+  border-top: hsl(28, 10%, 53%);
+}
+
+.chart {
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+}
+
+.chart-label {
+  font-weight: 500;
+  font-size: 18px;
+  color: hsl(28, 10%, 53%);
+  margin-top: 0;
+}
+
+.chart-bar-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+  margin-top: 30px;
+}
+
+.chart-bar {
+  background-color: hsl(10, 79%, 65%);
+  width: 40px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.chart-bar:hover {
+  background-color: hsl(10, 79%, 75%);
+  cursor: pointer;
+}
+
+.tooltip-amount {
+  color: white;
+  background-color: hsl(25, 47%, 15%);
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 14px;
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    transform: scale(0.7);
+  }
+}
+
+.attribution {
+  text-align: center;
+}
